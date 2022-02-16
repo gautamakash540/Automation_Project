@@ -10,6 +10,7 @@ name="akash"
 #------------------------------------
 
 sudo systemctl unmask apache2
+
 #------------------Check apache running---------
 
 if [ `service apache2 status | grep running | wc -l` == 1 ]
@@ -44,7 +45,6 @@ sudo apt-get install awscli -y
 aws s3 \
 cp /tmp/${akash}-httpd-logs-${timestp}.tar \
 s3://${s3bucket}/${akash}-httpd-logs-${timestp}.tar
-
 
 
 if [ -e /var/www/html/inventory.html ]
